@@ -22,10 +22,10 @@ public class UserController {
 
     @PostMapping(value = "/user-details")
     public String createUser(@RequestParam String name, 
-    @RequestParam String school, @RequestParam String subject, @RequestParam Object company,
-    @RequestParam Object fax, @RequestParam Object location) {
-        System.out.println(location);
-        System.out.println(fax);
+    @RequestParam String school, @RequestParam String subject, @RequestParam String[] company,
+    @RequestParam String[] fax, @RequestParam String[] location) {
+        System.out.println(location[1]);
+        System.out.println(fax[0]);
         return "index";
     }
 }

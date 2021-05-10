@@ -5,13 +5,13 @@ createField = () => {
     "afterend",
     `<tr>
       <td>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="company">
       </td>
       <td>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="fax">
       </td>
       <td>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="location">
       </td>
     </tr>`
     )
