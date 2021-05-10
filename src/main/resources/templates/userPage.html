@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Info</title>
+
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/userPage.css}">
+</head>
+<body>
+<!--NAVBAR/HEADER BAR-->
+        <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Crew-6-Stars</a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <buttton>
+                        <a class="nav-link" href="#">Search</a>
+                    </buttton>
+                </li>
+            </ul>
+        </header>
+
+        <div class="container">
+            <form action="#" th:action="@{/user-details}" method="post" th:object="${users}">
+
+                <div class="row">
+                    <div class="col-4">
+                        <label class="col-form-label">Full Name:</label>
+                        <input type="text"  th:field="*{name}" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label class="col-form-label">School:</label>
+                        <input type="text"  th:field="*{school}" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label class="col-form-label">Best Subject:</label>
+                        <input type="text"  th:field="*{bestSubject}" class="form-control">
+                    </div>
+                </div>
+
+                <!--BUTTON TO ADD AND DELETE FIELDS-->
+                <div class="row mt-4 mb-1">
+                    <div class="col">
+                        <button th:onclick="createField()" class="btn btn-primary float-start">Create row</button>
+                        <button th:onclick="deleteField()" class="btn btn-danger float-end">Delete row</button>
+                    </div>
+                </div>
+                <!--FIELDS LABEL-->
+                <div class="row">
+                    <div class="col-4">
+                        <label for="companyName" class="col-form-label">Company Name:</label>
+                    </div>
+                    <div class="col-4">
+                        <label for="faxNumber" class="col-form-label">Fax Number:</label>
+                    </div>
+                    <div class="col-4">
+                        <label for="location" class="col-form-label">Location:</label>
+                    </div>
+
+                </div>
+
+                <table class="table table-borderless mt-0" id="userTable">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text"  th:field="*{companyName}" class="form-control" id="companyName">
+                        </td>
+                        <td>
+                            <input type="text"  th:field="*{faxNumber}" class="form-control" id="faxNumber">
+                        </td>
+                        <td>
+                            <input type="text"  th:field="*{location}" class="form-control" id="location">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <button type="submit" class="btn btn-warning">
+                    SUBMIT
+                </button>
+
+            </form>
+        </div>
+
+
+        <p>Full Name:<span th:text="${users.name}"></span></p>
+        <p>University:<span th:text="${users.school}"></span></p>
+        <p>Best Subject<span th:text="${users.bestSubject}"></span></p>
+
+      <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+      <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+     margin:0;
+     padding:0;
+}
+
+html, body{
+    min-height:100%;
+    overflow: auto;
+}
+
+body{height:100vh;}
+
+.navbar {
+    background-color: #407036;
+     margin-bottom: 0;
+     border-radius: 0;
+    }
+
+    .nav-item.nav-link{
+    margin-right:20px;
+    }
+
+    .navbar.navbar-brand,
+    .navbar-nav.nav-item{
+        color: white;
+    }
+
+
