@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
@@ -20,8 +21,11 @@ public class UserController {
     }
 
     @PostMapping(value = "/user-details")
-    public String createUser(@ModelAttribute("users") User users) {
-        System.out.println(users);
-        return "userPage";
+    public String createUser(@RequestParam String name, 
+    @RequestParam String school, @RequestParam String subject, @RequestParam Object company,
+    @RequestParam Object fax, @RequestParam Object location) {
+        System.out.println(location);
+        System.out.println(fax);
+        return "index";
     }
 }
