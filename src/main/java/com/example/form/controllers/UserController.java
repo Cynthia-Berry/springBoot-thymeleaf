@@ -1,4 +1,4 @@
-package com.example.form.controller;
+package com.example.form.controllers;
 
 
 import com.example.form.models.User;
@@ -7,11 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
-
 
     @GetMapping(value = "/user-register")
     public String showUser(Model model) {
@@ -21,11 +19,14 @@ public class UserController {
     }
 
     @PostMapping(value = "/user-details")
-    public String createUser(@RequestParam String name, 
-    @RequestParam String school, @RequestParam String subject, @RequestParam String[] company,
-    @RequestParam String[] fax, @RequestParam String[] location) {
-        System.out.println(location[1]);
-        System.out.println(fax[0]);
-        return "index";
+    public String createUser(@ModelAttribute("users") User user){
+        System.out.println(user);
+        return "userResult";
     }
+//    public String createUser(@RequestParam String name,
+//    @RequestParam String school, @RequestParam String bestSubject, @RequestParam String[] companyName,
+//    @RequestParam String[] faxNumber, @RequestParam String[] location) {
+//        System.out.println(createUser(name, school, bestSubject, companyName, faxNumber, location));
+//        return "userResult";
+//    }
 }

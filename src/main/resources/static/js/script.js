@@ -2,7 +2,7 @@
 createField = () => {
   let tbody = document.getElementById('tableBody');
   tbody.insertAdjacentHTML(
-    "afterend",
+    "beforeend",
     `<tr>
       <td>
           <input type="text" class="form-control" name="company">

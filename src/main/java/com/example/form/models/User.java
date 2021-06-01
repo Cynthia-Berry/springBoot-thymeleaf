@@ -10,11 +10,11 @@ public class User {
 
     private Set<Work> work;
 
-    public User(String name, String school, String bestSubject, Set<Work> workDetails) {
+    public User(String name, String school, String bestSubject, Set<Work> work) {
         this.name = name;
         this.school = school;
         this.bestSubject = bestSubject;
-        this.work = workDetails;
+        this.work = work;
     }
 
     public User() {
@@ -59,7 +59,9 @@ public class User {
                 "name='" + name + '\'' +
                 ", school='" + school + '\'' +
                 ", bestSubject='" + bestSubject + '\'' +
-                ", work=" + work +
+                ", work { " +'\'' +
+                work + '\'' +
+                " }" +
                 '}';
     }
 }
