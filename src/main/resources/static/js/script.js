@@ -5,13 +5,13 @@ createField = () => {
     "beforeend",
     `<tr>
       <td>
-          <input type="text" class="form-control" name="company">
+          <input type="text" class="form-control" name="company" th:field="*{user.companyName}">
       </td>
       <td>
-          <input type="text" class="form-control" name="fax">
+          <input type="text" class="form-control" name="fax" th:field="*{user.faxNumber}">
       </td>
       <td>
-          <input type="text" class="form-control" name="location">
+          <input type="text" class="form-control" name="location" th:field="*{user.location}">
       </td>
     </tr>`
     )
