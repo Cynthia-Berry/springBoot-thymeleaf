@@ -13,13 +13,13 @@ public class UserController {
 
     @GetMapping(value = "/user-register")
     public String showUser(Model model) {
-        User users = new User();
-        model.addAttribute("users",users);
+        User user = new User();
+        model.addAttribute("user",user);
         return "userPage";
     }
 
     @PostMapping(value = "/user-details")
-    public String createUser(@ModelAttribute("users") User user){
+    public String createUser(@ModelAttribute("user") User user){
         System.out.println(user);
         return "userResult";
     }

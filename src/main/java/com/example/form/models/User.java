@@ -7,10 +7,9 @@ public class User {
     private String name;
     private String school;
     private String bestSubject;
+    private Work work = new Work();
 
-    private Set<Work> work;
-
-    public User(String name, String school, String bestSubject, Set<Work> work) {
+    public User(String name, String school, String bestSubject, Work work) {
         this.name = name;
         this.school = school;
         this.bestSubject = bestSubject;
@@ -45,11 +44,11 @@ public class User {
         this.bestSubject = bestSubject;
     }
 
-    public Set<Work> getWork() {
+    public Work getWork() {
         return work;
     }
 
-    public void setWork(Set<Work> work) {
+    public void setWork(Work work) {
         this.work = work;
     }
 

@@ -1,7 +1,7 @@
 package com.example.form.models;
 
 public class Work {
-    private Work work = new Work();
+  
     private String companyName;
     private String faxNumber;
     private String location;
