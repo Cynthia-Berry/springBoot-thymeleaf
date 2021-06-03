@@ -24,9 +24,9 @@
 </header>
 
 <h3>USER'S WORK HISTORY</h3>
-<p>Full Name: <span th:text="${users.name}"></span></p>
-<p>University: <span th:text="${users.school}"></span></p>
-<p>Best Subject: <span th:text="${users.bestSubject}"></span></p>
+<p>Full Name: <span th:text="${user.name}"></span></p>
+<p>University: <span th:text="${user.school}"></span></p>
+<p>Best Subject: <span th:text="${user.bestSubject}"></span></p>
 
 <table class="table table-striped .table-hover mt-1">
     <thead>
@@ -37,12 +37,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="user : ${users.work}">
-        <td th:text="${user.companyName}">
+    <tr>
+        <td th:text="${user.work.companyName}">
         </td>
-        <td th:text="${user.faxNumber}">
+        <td th:text="${user.work.faxNumber}">
         </td>
-        <td th:text="${user.location}">
+        <td th:text="${user.work.location}">
         </td>
     </tr>
     </tbody>
